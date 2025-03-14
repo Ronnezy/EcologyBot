@@ -32,9 +32,15 @@ def about_ecology(message):
 
 @bot.message_handler(commands=['RulesForUsingPlastic'])
 def rules_for_using_plastic(message):
-    rules_file = open('RulesForUsingPlastic', 'r', encoding='utf-8')
+    rules_file = open('RulesForUsingPlastic.txt', 'r', encoding='utf-8')
 
     bot.reply_to(message, rules_file.read())
+
+@bot.message_handler(commands=['TransportForSaveEcology'])
+def transport(message):
+    transport_file = open('TransportForSaveEcology.txt', 'r', encoding='utf-8')
+
+    bot.reply_to(message, transport_file.read())
 
 @bot.message_handler(func = lambda message: True)
 def echo_all(message):
